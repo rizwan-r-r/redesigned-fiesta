@@ -1,0 +1,24 @@
+{
+    "version": "0.29.1",
+    "description": "Collect, transform, & route all observability data.",
+    "homepage": "https://vector.dev",
+    "license": "Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://packages.timber.io/vector/0.29.1/vector-0.29.1-x86_64-pc-windows-msvc.zip",
+            "hash": "898ecc7a72c9875673830e1073bb73c17087db29db4d84864711a4555701a661"
+        }
+    },
+    "bin": "bin\\vector.exe",
+    "persist": "config",
+    "checkver": {
+        "github": "https://github.com/timberio/vector"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://packages.timber.io/vector/$version/vector-$version-x86_64-pc-windows-msvc.zip"
+            }
+        }
+    }
+}
