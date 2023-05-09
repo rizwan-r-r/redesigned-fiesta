@@ -1,0 +1,39 @@
+{
+    "version": "0.1.396",
+    "description": "Collection of tools for analyzing open source packages.",
+    "homepage": "https://github.com/microsoft/OSSGadget",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/microsoft/OSSGadget/releases/download/v0.1.396/OSSGadget_win_0.1.396.zip",
+            "hash": "8c47dc81497d4071bab58e85384aa389f38ff7295e518e6a6703d9557c80dda0",
+            "extract_dir": "OSSGadget_win_0.1.396"
+        }
+    },
+    "bin": [
+        "oss-characteristic.exe",
+        "oss-defog.exe",
+        "oss-detect-backdoor.exe",
+        "oss-detect-cryptography.exe",
+        "oss-diff.exe",
+        "oss-download.exe",
+        "oss-find-domain-squats.exe",
+        "oss-find-source.exe",
+        "oss-find-squats.exe",
+        "oss-health.exe",
+        "oss-metadata.exe",
+        "oss-risk-calculator.exe"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/microsoft/OSSGadget/releases/download/v$version/OSSGadget_win_$version.zip",
+                "hash": {
+                    "url": "https://github.com/microsoft/OSSGadget/releases/download/v$version/HASHES.txt"
+                },
+                "extract_dir": "OSSGadget_win_$version"
+            }
+        }
+    }
+}
