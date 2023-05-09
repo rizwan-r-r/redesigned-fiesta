@@ -1,0 +1,40 @@
+{
+    "version": "1.1.1",
+    "description": "The minimal, blazing fast, and extremely customizable prompt for any shell!",
+    "homepage": "https://starship.rs",
+    "license": "ISC",
+    "notes": [
+        "Usage: Add 'Invoke-Expression (&starship init powershell)' to the end of your PowerShell $PROFILE.",
+        "Prerequisites: A Powerline font installed and enabled in your terminal."
+    ],
+    "suggest": {
+        "vcredist": "extras/vcredist2019"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/starship/starship/releases/download/v1.1.1/starship-x86_64-pc-windows-msvc.zip",
+            "hash": "9dff524892074824264d0012c7ecba3ab97dd7b6a0eef41d4ade3a5be2cef25e"
+        },
+        "32bit": {
+            "url": "https://github.com/starship/starship/releases/download/v1.1.1/starship-i686-pc-windows-msvc.zip",
+            "hash": "5a85c8aecb7678f4a78ccdc3de20714e50d4c6886a88da13ca026eadec3ba07b"
+        }
+    },
+    "bin": "starship.exe",
+    "checkver": {
+        "github": "https://github.com/starship/starship"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/starship/starship/releases/download/v$version/starship-x86_64-pc-windows-msvc.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/starship/starship/releases/download/v$version/starship-i686-pc-windows-msvc.zip"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256"
+        }
+    }
+}

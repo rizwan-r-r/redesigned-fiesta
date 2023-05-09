@@ -1,0 +1,40 @@
+{
+    "version": "1.21.1",
+    "description": "The plugin-driven server agent for collecting & reporting metrics.",
+    "homepage": "https://www.influxdata.com/time-series-platform/telegraf/",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://dl.influxdata.com/telegraf/releases/telegraf-1.21.1_windows_amd64.zip",
+            "hash": "a4717cdffe42541fe1011a64a05dedcc175a75af65c991cbf2449168dbca29dd"
+        },
+        "32bit": {
+            "url": "https://dl.influxdata.com/telegraf/releases/telegraf-1.21.1_windows_i386.zip",
+            "hash": "ac81564fd5fb34eb98889263d4d244743c80bdb7f551f68831ca953e64978178"
+        }
+    },
+    "extract_dir": "telegraf-1.21.1",
+    "bin": "telegraf.exe",
+    "persist": "telegraf.conf",
+    "env_set": {
+        "TELEGRAF_CONFIG_PATH": "$persist_dir/telegraf.conf"
+    },
+    "checkver": {
+        "github": "https://github.com/influxdata/telegraf"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://dl.influxdata.com/telegraf/releases/telegraf-$version_windows_amd64.zip"
+            },
+            "32bit": {
+                "url": "https://dl.influxdata.com/telegraf/releases/telegraf-$version_windows_i386.zip"
+            }
+        },
+        "hash": {
+            "url": "https://github.com/influxdata/telegraf/releases/tag/v$version",
+            "regex": "(?s)$basename</.*?<code>$sha256</"
+        },
+        "extract_dir": "telegraf-$version"
+    }
+}
